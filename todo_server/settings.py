@@ -85,7 +85,7 @@ DATABASES = {
         'HOST': 'seungjuntestdb.cmjedre2v0ae.ap-northeast-2.rds.amazonaws.com',
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
-        },
+        }
     }
 }
 
