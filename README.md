@@ -33,3 +33,6 @@ show variables like '%time_zone%';
 
 set system_time_zone = 'Asia/Seoul';
 ```
+
+### DB Schema 
+<img src="/DB Schema.png" title="DB Schema"></img>
