@@ -51,3 +51,16 @@ def get_todo(request, id, todo_id):
         }
 
         return JsonResponse(todo_object)
+
+@csrf_exempt
+def set_complete_todo(request, id, todo_id):
+    if request.method == 'GET':
+        todo = todo_list.get_todo(todo_id)
+        todo.is_complete = True
+
+@csrf_exempt
+def set_undo_todo(request, id, todo_id):
+    if request.method == 'GET':
+        todo = todo_list.get_todo(todo_id)
+        todo.is_complete = False
+
