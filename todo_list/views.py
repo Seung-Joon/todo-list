@@ -58,9 +58,13 @@ def set_complete_todo(request, id, todo_id):
         todo = todo_list.get_todo(todo_id)
         todo.is_complete = True
 
+    return JsonResponse({"Result": True})
+
 @csrf_exempt
 def set_undo_todo(request, id, todo_id):
     if request.method == 'GET':
         todo = todo_list.get_todo(todo_id)
         todo.is_complete = False
+
+    return JsonResponse({"Result": True})
 

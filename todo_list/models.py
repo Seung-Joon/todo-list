@@ -31,13 +31,13 @@ class ToDoList:
     def delete_todo(self, id):
         self.todo_object.pop(id)
 
-    def edit_todo(id, info):
+    def edit_todo(self, id, info):
         self.get_todo(id).info = info
 
     def set_complete_todo(self, id):
         self.get_todo(id).is_complete = True
 
-    def set_end_todo(self, id):
+    def set_undo_todo(self, id):
         self.get_todo(id).is_complete = False
 
     def get_todo(self, id):
@@ -49,15 +49,4 @@ class ToDoList:
         
 
     
-
-
-
-
-#add_todo
-#delete_todo
-#edit_todo
-#complete_todo
-#end_todo
-#get_todo
-#get_all_todo
 

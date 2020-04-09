@@ -20,9 +20,12 @@ from todo_list import views
 from rest_framework import routers
 
 router = routers.DefaultRouter() 
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^',include(router.urls)),
     path(r'todolist/<str:id>/todo', views.get_all_todo),
-    path(r'todolist/<str:id>/todo/<str:todo_id>', views.get_todo)
+    path(r'todolist/<str:id>/todo/<str:todo_id>', views.get_todo),
+    path(r'todolist/<str:id>/todo/<str:todo_id>/setcomplete', views.set_complete_todo),
+    path(r'todolist/<str:id>/todo/<str:todo_id>/undo', views.set_undo_todo)
 ]   
