@@ -36,3 +36,30 @@ set system_time_zone = 'Asia/Seoul';
 
 ### DB Schema 
 <img src="/DB Schema.png" title="DB Schema"></img>
+
+
+### DB Definition 
+```
+CREATE SCHEMA `TODO_LIST`;
+
+USE TODO_LIST;
+
+CREATE TABLE `User` (
+    `user_id` INT NOT NULL AUTO_INCREMENT,
+    `password` varchar(40) NOT NULL UNIQUE,
+    `email` varchar(50) NOT NULL UNIQUE,
+    `created_date` DATETIME NOT NULL UNIQUE,
+    PRIMARY KEY (`user_id`)
+);
+
+CREATE TABLE `Todo` (
+    `todo_id` INT NOT NULL AUTO_INCREMENT,
+    `title` varchar(255) NOT NULL UNIQUE,
+    `description` varchar(255) NOT NULL UNIQUE,
+    `user_id` INT NOT NULL,
+    `complete` BOOLEAN NOT NULL UNIQUE,
+    PRIMARY KEY (`todo_id`)
+);
+
+ALTER TABLE `Todo` ADD CONSTRAINT `Todo_fk0` FOREIGN KEY (`user_id`) REFERENCES `User`(`user_id`);
+```
