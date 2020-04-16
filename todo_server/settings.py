@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'todo_list',
+    'user',
     'rest_framework',
+
 ]
 
 MIDDLEWARE = [
@@ -78,7 +80,7 @@ WSGI_APPLICATION = 'todo_server.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'todoList',
+        'NAME': 'TODO_LIST',
         'USER': 'admin',
         'PASSWORD': 'qkr159263',
         'PORT': '3306',

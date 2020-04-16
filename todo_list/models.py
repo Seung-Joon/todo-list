@@ -25,8 +25,8 @@ class ToDoList:
         for todo in todo_list:
             self.todo_object[todo.id] = todo
 
-    def add_todo(self, id, todo):
-        self.todo_object[id] = todo
+    def add_todo(self, todo):
+        self.todo_object[todo.keys()[0]] = todo
 
     def delete_todo(self, id):
         self.todo_object.pop(id)
