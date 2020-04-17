@@ -10,14 +10,17 @@ import datetime
 from rest_framework.renderers import JSONRenderer
 from user.serializer import UserSerializer
 from rest_framework.parsers import JSONParser
-
+from user.models import User
 
 @csrf_exempt
 def test(request):
     if request.method == 'GET':
         todo = models.User.objects.all()
 
-    return JsonResponse({"Result": str(UserSerializer(todo).data)})
+        serializer = UserSerializer(todo, many=True)
+
+
+    return JsonResponse({"Result": serializer.data})
 
 @csrf_exempt
 def registeration(request):
