@@ -43,7 +43,7 @@ set system_time_zone = 'Asia/Seoul';
 CREATE TABLE `User` (
     `user_id` INT NOT NULL AUTO_INCREMENT,
     `email` varchar(50) NOT NULL UNIQUE,
-    `password` varchar(50) NOT NULL UNIQUE,
+    `password` varchar(50) NOT NULL,
     `created_date` DATETIME NOT NULL UNIQUE,
     PRIMARY KEY (`user_id`)
 );
