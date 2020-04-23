@@ -1,8 +1,7 @@
 from rest_framework import serializers
 
 class UserSerializer(serializers.Serializer):
-    user_id = serializers.CharField(max_length = 30)
-    email = serializers.EmailField()
-    password = serializers.CharField(max_length = 50)
-    created_date = serializers.DateTimeField
-
+    class Meta:
+        model = User
+        fields = '__all__'
+        
