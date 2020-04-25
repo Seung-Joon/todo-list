@@ -11,8 +11,8 @@ from django.db import models
 class User(models.Model):
     user_id = models.AutoField(primary_key=True)
     email = models.CharField(unique=True, max_length=50)
-    password = models.CharField(max_length=50)
-    created_date = models.DateTimeField(unique=True)
+    password = models.CharField(max_length=40)
+    created_date = models.DateTimeField()
 
     class Meta:
         managed = False
