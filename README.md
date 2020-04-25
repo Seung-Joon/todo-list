@@ -41,20 +41,20 @@ set system_time_zone = 'Asia/Seoul';
 ### DB Definition Query
 ```
 CREATE TABLE `User` (
-    `user_id` INT NOT NULL AUTO_INCREMENT,
-    `email` varchar(50) NOT NULL UNIQUE,
-    `password` varchar(50) NOT NULL,
-    `created_date` DATETIME NOT NULL UNIQUE,
-    PRIMARY KEY (`user_id`)
+	`user_id` INT NOT NULL AUTO_INCREMENT,
+	`email` varchar(50) NOT NULL UNIQUE,
+	`password` varchar(40) NOT NULL,
+	`created_date` DATETIME NOT NULL,
+	PRIMARY KEY (`user_id`)
 );
 
 CREATE TABLE `Todo` (
-    `todo_id` INT NOT NULL AUTO_INCREMENT,
-    `user_id` INT NOT NULL,
-    `title` varchar(255) NOT NULL UNIQUE,
-    `description` varchar(255) NOT NULL UNIQUE,
-    `complete` BOOLEAN NOT NULL UNIQUE,
-    PRIMARY KEY (`todo_id`)
+	`todo_id` INT NOT NULL AUTO_INCREMENT,
+	`user_id` INT NOT NULL UNIQUE,
+	`title` varchar(255) NOT NULL,
+	`description` varchar(255) NOT NULL,
+	`complete` BOOLEAN NOT NULL,
+	PRIMARY KEY (`todo_id`)
 );
 
 ALTER TABLE `Todo` ADD CONSTRAINT `Todo_fk0` FOREIGN KEY (`user_id`) REFERENCES `User`(`user_id`);
