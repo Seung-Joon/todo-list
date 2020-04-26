@@ -17,11 +17,14 @@ from django.conf.urls import url, include
 from django.urls import path
 from django.contrib import admin
 from rest_framework import routers
-from user import views
+from user.views import urlpatterns as user_urls
+from todo.views import urlpatterns as todo_urls
+
 router = routers.DefaultRouter() 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    path('user/<int:pk>', views.UserDetail.as_view()),
-    path('user', views.UserList.as_view())
+    path('user/', include(user_urls)),
+    path('todo/', include(todo_urls))
+    #path('todolist', views.TodoList.as_view())
 ]   
