@@ -1,13 +1,8 @@
 from todo.models import Todo
 from todo.serializer import TodoSerializer
 from rest_framework import generics
-from django.urls import include, path
+from django.urls import path
 from django_filters.rest_framework import DjangoFilterBackend
-
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework import status
-
 
 class TodoList(generics.ListCreateAPIView):
     queryset = Todo.objects.all()
