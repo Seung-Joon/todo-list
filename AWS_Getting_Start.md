@@ -55,6 +55,14 @@
  #### 이제 정상적으로 설치가 됐으니 필요한 모듈들을 깔아보자.
  * python3 -m pip install django                   -> 기본적인 장고 모듈이다.
  * python3 -m pip install djangorestframework      -> 나는 장고로 rest-api를 만들껀데 편하게 만들고싶으니까 해당 프래임워크를 사용할꺼다.
+ * python3 -m pip install mysqlclient              -> mysql에 연결할 수 있도록 해주는 모듈이다.
+   - 설치하다 보면 에러가 발생된다.
+   - 에러가 발생한다면 아래와 같이 커맨드를 쳐 해결해보자.
+   ```
+   # apt-get update
+   # apt-get install python3-dev libmysqlclient-dev gcc
+   # pip install mysqlclient
+   ```
  
  #### 근데 자꾸 python3를 쳐야만 python3 버전이 열린다. 3숫자 치기 싫으니까 환경변수 설정을 바꿔볼꺼다.
  * python -V
