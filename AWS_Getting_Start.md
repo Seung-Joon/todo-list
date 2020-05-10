@@ -57,8 +57,20 @@
  * python3 -m pip install djangorestframework      -> 나는 장고로 rest-api를 만들껀데 편하게 만들고싶으니까 해당 프래임워크를 사용할꺼다.
  
  #### 근데 자꾸 python3를 쳐야만 python3 버전이 열린다. 3숫자 치기 싫으니까 환경변수 설정을 바꿔볼꺼다.
+ * python -V
+ ```
+ Python 2.7.17
+ ```
+ #### 현재 python 환경 변수가 2.7로 설정되어있는것을 확인할 수 있다.
  
- 계속..
+ * python3 -V
+ ```
+ Python 3.6.9
+ ```
+ #### 현재 설치되어 있는 python3 버전은 3.6.9가 설치되있다.
+ 
+ * alias python='/usr/bin/python3.6'
+ #### 이거 하나만 쳐주면 python -> python3.6으로 매칭된다. 와!!!!
  
  
  
