@@ -51,8 +51,20 @@
  ```
  (대충 pip 모듈이 있고 버전이 몇이라는 내용)
  ```
- 
  #### 이제 정상적으로 설치가 됐으니 필요한 모듈들을 깔아보자.
+
+
+## 가상환경 설정
+* 개발 프로그램별로 사용하는 모듈들의 버전 등 실행 환경이 서로 상이할 수 있음.  
+* 서로 독립적인 운영 환경을 사용하기 위한 방법으로 가상환경을 구축해 사용함.
+  ```
+  sudo apt-get install python3-venv # virtualenv 모듈을 설치하자.
+  sudo python3 -m venv todo_list_env # /srv/ 폴더에 todo_list_envs 라는 이름의 가상환경 생성
+  sudo source /srv/todo_list_env/bin/activate # 가상환경 활성화
+  ```
+
+
+
  * python3 -m pip install django                   -> 기본적인 장고 모듈이다.
  * python3 -m pip install djangorestframework      -> 나는 장고로 rest-api를 만들껀데 편하게 만들고싶으니까 해당 프래임워크를 사용할꺼다.
  
