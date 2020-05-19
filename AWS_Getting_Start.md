@@ -62,9 +62,6 @@
   sudo python3 -m venv todo_list_env # /srv/ 폴더에 todo_list_envs 라는 이름의 가상환경 생성
   sudo source /srv/todo_list_env/bin/activate # 가상환경 활성화
   ```
-
-
-
  * python3 -m pip install django                   -> 기본적인 장고 모듈이다.
  * python3 -m pip install djangorestframework      -> 나는 장고로 rest-api를 만들껀데 편하게 만들고싶으니까 해당 프래임워크를 사용할꺼다.
  * python3 -m pip install mysqlclient              -> mysql에 연결할 수 있도록 해주는 모듈이다.
@@ -93,12 +90,14 @@
  #### 이거 하나만 쳐주면 python -> python3.6으로 매칭된다. 와!!!!
  
  
- 
- 
- 
- 
-  ## 5. uwsgi 셋팅하기
-   - 오늘은 머리가 아파서 코딩 못하겠다..
+## 5. uwsgi 셋팅하기
+    * 기본환경 셋팅
+      ```
+      source /srv/todo_list_env/bin/activate #먼저 가상 환경을 실행한다.
+      pip3 install uwsgi # uwsgi 설치
+      ```
+    * 구동 파일 만들기
+    매번 
 
 
 
