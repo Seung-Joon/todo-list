@@ -7,9 +7,12 @@ from django_filters.rest_framework import DjangoFilterBackend
 class TodoList(generics.ListCreateAPIView):
     queryset = Todo.objects.all()
     serializer_class = TodoSerializer
-    filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['todo_id', 'user']
 
+class TodoListFilter(generics.ListAPIView):
+    queryset = Todo.objects.all()
+    serializer_class = TodoSerializer
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['user_id', 'todo_id', 'title', 'complete']
 
 class TodoDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Todo.objects.all()
@@ -18,6 +21,7 @@ class TodoDetail(generics.RetrieveUpdateDestroyAPIView):
 
 urlpatterns = [
     path('', TodoList.as_view()),
+    path('query', TodoListFilter.as_view()),
     path('<int:pk>', TodoDetail.as_view())
 ]
 
