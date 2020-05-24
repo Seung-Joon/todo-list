@@ -17,15 +17,13 @@ from django.conf.urls import url, include
 from django.urls import path
 from rest_framework.routers import DefaultRouter
 #from todo.views import urlpatterns as todo_urls
-
+from todo.views import TodoViewSet
 from user.views import UserViewSet
-
 
 router = DefaultRouter()
 router.register('user', UserViewSet)
+router.register('todo', TodoViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
-    #path('todo/', include(todo_urls))
-    #path('todolist', views.TodoList.as_view())
 ]   
