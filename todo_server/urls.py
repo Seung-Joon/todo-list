@@ -16,14 +16,34 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.urls import path
 from rest_framework.routers import DefaultRouter
-#from todo.views import urlpatterns as todo_urls
 from todo.views import TodoViewSet
 from user.views import UserViewSet
+from drf_yasg import openapi
+from drf_yasg.views import get_schema_view
+from rest_framework.permissions import AllowAny
 
 router = DefaultRouter()
 router.register('user', UserViewSet)
 router.register('todo', TodoViewSet)
 
+schema_view_v1 = get_schema_view(
+    openapi.Info(
+        title="TodoList Open API",
+        default_version='v1',
+        description="Todolist Api Documentation",
+        terms_of_service="https://www.google.com/policies/terms/",
+        contact=openapi.Contact(email="tmdwns02556@google.com"),
+        license=openapi.License(name="Seung-Joon"),
+    ),
+    validators=['flex'], #'ssv'],
+    public=True,
+    permission_classes=(AllowAny,),
+    patterns=router.urls,
+)
+
 urlpatterns = [
     path('', include(router.urls)),
+    url(r'^swagger(?P<format>\.json|\.yaml)/v1$', schema_view_v1.without_ui(cache_timeout=0), name='schema-json'),
+    url(r'^swagger/v1/$', schema_view_v1.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    url(r'^redoc/v1/$', schema_view_v1.with_ui('redoc', cache_timeout=0), name='schema-redoc-v1'),
 ]   
